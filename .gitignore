@@ -1,0 +1,15 @@
+build/
+build-*/
+out/
+.cache/
+compile_commands.json
+*.o
+*.obj
+*.exe
+*.log
+gui_shell_settings.json
+.vs/
+.vscode/
+.idea/
+CMakeUserPresets.json
+imgui.ini
