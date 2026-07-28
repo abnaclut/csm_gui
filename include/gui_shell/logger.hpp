@@ -5,21 +5,22 @@
 
 #include <spdlog/spdlog.h>
 
-namespace gui_shell {
+namespace gui_shell
+{
 
-/// Thin wrapper around a single named spdlog logger used throughout the
-/// module. Consumers may call Init() once at startup to control the name
-/// and verbosity; if they don't, Get() will lazily initialize sane defaults.
-class Logger {
-public:
-    static void Init(const std::string& name = "GuiShell",
-                      spdlog::level::level_enum level = spdlog::level::info);
+  /// Thin wrapper around a single named spdlog logger used throughout the
+  /// module. Consumers may call Init() once at startup to control the name
+  /// and verbosity; if they don't, Get() will lazily initialize sane defaults.
+  class Logger
+  {
+  public:
+    static void Init(const std::string& name = "GuiShell", spdlog::level::level_enum level = spdlog::level::info);
 
     static std::shared_ptr<spdlog::logger>& Get();
 
-private:
+  private:
     static std::shared_ptr<spdlog::logger> s_logger;
-};
+  };
 
 } // namespace gui_shell
 
