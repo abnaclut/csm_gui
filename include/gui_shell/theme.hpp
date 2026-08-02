@@ -21,7 +21,7 @@ namespace gui_shell
   {
     ThemePreset preset = ThemePreset::Dark;
 
-    float rounding = 6.0f;
+    float rounding = 0.0f;
     float window_border_size = 1.0f;
     float frame_padding_x = 8.0f;
     float frame_padding_y = 6.0f;
