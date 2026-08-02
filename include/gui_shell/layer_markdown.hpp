@@ -9,7 +9,8 @@
 //----------------------------------------------------------------------
 /// Example layer demonstrating the logic/render split: OnUpdate() only
 /// touches state, OnImGuiRender() only draws it.
-class DemoLayer final : public gui_shell::Layer {
+class DemoLayer final : public gui_shell::Layer
+{
 public:
   DemoLayer() : Layer("DemoLayer") {}
 

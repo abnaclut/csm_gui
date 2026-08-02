@@ -9,21 +9,21 @@ with your own logic and widgets.
 ## Features
 
 - **CMake + Ninja** build, dependencies fetched automatically via `FetchContent`
-  (GLFW, Dear ImGui, spdlog, nlohmann/json, GoogleTest) — no manual vendoring.
+  (GLFW, Dear ImGui, spdlog, nlohmann/json, GoogleTest)
 - **C++20**, warnings-as-you'd-expect (`-Wall -Wextra -Wpedantic` / `/W4`).
 - **spdlog**-backed logging (`GS_INFO`, `GS_WARN`, ... macros).
 - **GoogleTest** unit tests for the parts that don't need a live GL context
   (settings, theme, layer lifecycle).
 - Clean module separation:
 
-  | Module              | Responsibility                                             |
-  |----------------------|-------------------------------------------------------------|
-  | `gui_shell::Window`      | GLFW window + OpenGL context, nothing else               |
-  | `gui_shell::ImGuiRenderer` | ImGui context + GLFW/OpenGL3 backend, frame lifecycle   |
+  | Module              | Responsibility                               |
+  |----------------------|-----------------------------------------------|
+  | `gui_shell::Window`      | GLFW window + OpenGL context               |
+  | `gui_shell::ImGuiRenderer` | ImGui context + GLFW/OpenGL3 backend, frame lifecycle |
   | `gui_shell::Theme`       | Pure ImGui style/color presets (Dark/Light/ClassicSteam/Custom) |
   | `gui_shell::Settings`    | Technical settings (window size, vsync, MSAA, FPS cap) + JSON I/O |
   | `gui_shell::Layer`       | Your extension point — logic (`OnUpdate`) and render (`OnImGuiRender`) kept separate |
-  | `gui_shell::Application` | Orchestrates the above and runs the main loop            |
+  | `gui_shell::Application` | Orchestrates the above and runs the main loop |
 
 ## Directory layout
 
@@ -59,14 +59,14 @@ Useful options (pass as `-DOPTION=ON/OFF`):
 
 ## Integrating into another project
 
-**Option A — `add_subdirectory` (simplest, e.g. as a git submodule):**
+**A — `add_subdirectory` (simplest, e.g. as a git submodule):**
 
 ```cmake
 add_subdirectory(third_party/gui_shell)
 target_link_libraries(my_app PRIVATE gui_shell::gui_shell)
 ```
 
-**Option B — `FetchContent`:**
+**B — `FetchContent`:**
 
 ```cmake
 include(FetchContent)
