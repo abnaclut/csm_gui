@@ -1,8 +1,10 @@
-#include <memory>
-#include <imgui.h>
 #include <gui_shell/application.hpp>
-#include <gui_shell/layer_markdown.hpp>
+#include <gui_shell/demo_layer.hpp>
 #include <gui_shell/logger.hpp>
+#include <imgui.h>
+#include <memory>
+
+#include <gui_shell/layer_markdown.hpp>
 
 
 using namespace gui_shell;
@@ -19,7 +21,7 @@ int main()
   settings.LoadFromFile("gui_shell_settings.json");
 
   Application app(settings);
-  app.PushLayer(std::make_unique<DemoLayer>());
+  app.PushLayer(std::make_unique<EmptyLayer>());
   app.Run();
 
   // Optional: persist settings back out on exit.

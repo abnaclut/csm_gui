@@ -37,6 +37,8 @@ add_library(gui_shell STATIC
     src/renderer.cpp
     src/application.cpp
         include/gui_shell/layer_markdown.hpp
+        include/gui_shell/demo_layer.hpp
+        include/gui_shell/empty_layer.hpp
 )
 add_library(gui_shell::gui_shell ALIAS gui_shell)
 
